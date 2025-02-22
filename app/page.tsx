@@ -148,10 +148,10 @@ export default function Page() {
                 Diqqat!
               </h2>
               <p className="text-gray-300">
-                Ushbu kursda siz kiberxavfsizlik uchun zarur bo'lgan barcha
-                bilimlarni o'rganasiz. Sohaning bir qancha yo'nalishlari mavjud,
+                Ushbu kursda siz kiberxavfsizlik uchun zarur bolgan barcha
+                bilimlarni organasiz. Sohaning bir qancha yonalishlari mavjud,
                 siz ushbu kursda bu sohalarni barchasiga aloqador bilimlar bilan
-                tanishasiz, ya'ni kurs umumiy va komplekt qilib ishlangan.
+                tanishasiz, yani kurs umumiy va komplekt qilib ishlangan.
               </p>
             </div>
 
@@ -200,7 +200,7 @@ export default function Page() {
             {/* Keywords Section */}
             <div className="mt-12">
               <h3 className="text-xl font-semibold text-emerald-400 mb-4">
-                Mavzuga oid kalit so'zlar:
+                Mavzuga oid kalit sozlar:
               </h3>
               <div className="flex flex-wrap gap-2">
                 {[
