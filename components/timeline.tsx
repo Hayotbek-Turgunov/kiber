@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
 
 export default function Timeline() {
   const timelineData = [
@@ -22,36 +22,34 @@ export default function Timeline() {
       content:
         "Virus haqida asoslarini tushinchalar, turlar va tasnifi , worms, keylogger, bot/spam, banker, dropper/downloader, ransomware, miner, backdoor, Olysidg, immunity, ids , eKS,Ghidra SRE , Windbg, Mal, C2/C&C, IDE, Packed/Obfuscated, Disassamblers, IOC, Registers, static/dynamic analysis, Revers engineering haqida , crackme, malware, sandbox, powershell, (malkit/stealth, AV/SI/bypass , AV bypass , PUD, virus OEP, CobaltStrike, UAC, Agressor scripts, C2, Linux/Mac OS virus , malware o'rnatish va boshqa ko'plab mavzularni o'z ichiga olgan 3-oyga mo'ljallangan uchun CyberSecurity v5 ( PROTECT PRO ) / videokursi beriladi.",
     },
-  ]
+  ];
 
-  const timelineRef = useRef(null)
+  const timelineRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fadeIn")
-          }
-        })
-      },
-      {
-        threshold: 0.2,
-      },
-    )
+    if (!timelineRef.current) return;
 
-    if (timelineRef.current) {
-      const timelineItems = timelineRef.current.querySelectorAll(".timeline-item")
-      timelineItems.forEach((item) => observer.observe(item))
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Element ko‘rinmoqda:", entry.target);
+        }
+      });
+    });
+
+    // timelineRef.current ni o‘zgaruvchiga saqlash
+    const container = timelineRef.current;
+    const timelineItems = Array.from(
+      container.querySelectorAll(".timeline-item")
+    );
+
+    timelineItems.forEach((item) => observer.observe(item));
 
     return () => {
-      if (timelineRef.current) {
-        const timelineItems = timelineRef.current.querySelectorAll(".timeline-item")
-        timelineItems.forEach((item) => observer.unobserve(item))
-      }
-    }
-  }, [])
+      timelineItems.forEach((item) => observer.unobserve(item));
+      observer.disconnect(); // Observerni tozalash
+    };
+  }, []);
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12" ref={timelineRef}>
@@ -72,14 +70,24 @@ export default function Timeline() {
                 <div className="absolute inset-0 bg-emerald-500 rounded-full"></div>
               </div>
 
-              <div className={`sm:w-1/2 ${index % 2 === 0 ? "sm:pr-8 sm:ml-auto" : "sm:pl-8"}`}>
+              <div
+                className={`sm:w-1/2 ${
+                  index % 2 === 0 ? "sm:pr-8 sm:ml-auto" : "sm:pl-8"
+                }`}
+              >
                 <div className="bg-emerald-500/10 rounded-lg p-4 sm:p-6 border border-emerald-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-200">
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-base sm:text-lg font-semibold text-emerald-400">{item.month}</h3>
-                    <span className="text-gray-500">//</span>
-                    <h3 className="text-base sm:text-lg font-semibold text-emerald-400">{item.title}</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-emerald-400">
+                      {item.month}
+                    </h3>
+                    <span className="text-gray-500"></span>
+                    <h3 className="text-base sm:text-lg font-semibold text-emerald-400">
+                      {item.title}
+                    </h3>
                   </div>
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">{item.content}</p>
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                    {item.content}
+                  </p>
                 </div>
               </div>
             </div>
@@ -112,6 +120,5 @@ export default function Timeline() {
         }
       `}</style>
     </div>
-  )
+  );
 }
-
