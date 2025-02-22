@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react"; // Removed useEffect since we won't need it
 
 export default function Timeline() {
   const timelineData = [
@@ -26,31 +26,6 @@ export default function Timeline() {
 
   const timelineRef = useRef(null);
 
-  useEffect(() => {
-    if (!timelineRef.current) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log("Element ko‘rinmoqda:", entry.target);
-        }
-      });
-    });
-
-    // timelineRef.current ni o‘zgaruvchiga saqlash
-    const container = timelineRef.current;
-    const timelineItems = Array.from(
-      container.querySelectorAll(".timeline-item")
-    );
-
-    timelineItems.forEach((item) => observer.observe(item));
-
-    return () => {
-      timelineItems.forEach((item) => observer.unobserve(item));
-      observer.disconnect(); // Observerni tozalash
-    };
-  }, []);
-
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12" ref={timelineRef}>
       <div className="relative">
@@ -62,7 +37,7 @@ export default function Timeline() {
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className="relative pl-12 sm:pl-0 timeline-item opacity-0 transform translate-y-10 transition-all duration-700 ease-out"
+              className="relative pl-12 sm:pl-0 motion-safe:animate-fade-in-up"
             >
               {/* Glowing dot */}
               <div className="absolute left-0 sm:left-1/2 w-8 h-8 transform -translate-x-1/2">
@@ -112,11 +87,6 @@ export default function Timeline() {
 
         .pulse {
           animation: pulse 2s infinite;
-        }
-
-        .animate-fadeIn {
-          opacity: 1;
-          transform: translateY(0);
         }
       `}</style>
     </div>
