@@ -1,8 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+interface FAQSectionProps {
+  id?: string;
+  className?: string;
+}
 
 const faqs = [
   {
@@ -25,17 +30,17 @@ const faqs = [
     answer:
       "Darslar onlayn formatda Zoom orqali o'tkaziladi. Har bir dars yozib olinadi va keyinchalik qayta ko'rish uchun taqdim etiladi.",
   },
-]
+];
 
-export default function FAQSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+export default function FAQSection({ id, className = "" }: FAQSectionProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <div className="py-16 sm:py-24">
+    <div id={id} className={`py-16 sm:py-24 ${className}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl divide-y divide-emerald-500/20">
           <h2 className="text-2xl font-bold leading-10 tracking-tight text-emerald-400 text-center mb-8">
-            Tez-tez so'raladigan savollar
+            Tez-tez soraladigan savollar
           </h2>
           <dl className="mt-10 space-y-6 divide-y divide-emerald-500/20">
             {faqs.map((faq, index) => (
@@ -43,7 +48,9 @@ export default function FAQSection() {
                 <dt className="text-base">
                   <button
                     className="flex w-full items-start justify-between text-left text-emerald-400"
-                    onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                    onClick={() =>
+                      setActiveIndex(activeIndex === index ? null : index)
+                    }
                   >
                     <span className="font-semibold">{faq.question}</span>
                     <span className="ml-6 flex h-7 items-center">
@@ -75,6 +82,5 @@ export default function FAQSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
