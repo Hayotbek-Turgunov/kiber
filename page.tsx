@@ -1,54 +1,44 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import {
-  PhoneCall,
-  CheckCircle,
-  Shield,
-  Lock,
-  ArrowUpCircle,
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import dynamic from "next/dynamic";
-import ParticlesBackground from "@/components/particles-background";
-import StatsSection from "@/components/stats-section";
-import { useEffect, useState } from "react";
-import MobileNav from "@/components/mobile-nav";
-import Image from "next/image";
-import CourseHighlights from "@/components/course-highlights";
+"use client"
+import { Button } from "@/components/ui/button"
+import { PhoneCall, CheckCircle, Shield, Lock, ArrowUpCircle } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import dynamic from "next/dynamic"
+import ParticlesBackground from "@/components/particles-background"
+import StatsSection from "@/components/stats-section"
+import { useEffect, useState } from "react"
+import MobileNav from "@/components/mobile-nav"
+import Image from "next/image"
+import CourseHighlights from "@/components/course-highlights"
 
-const Timeline = dynamic(() => import("@/components/timeline"), { ssr: false });
-const FAQSection = dynamic(() => import("@/components/faq-section"), {
-  ssr: false,
-});
-const PricingSection = dynamic(() => import("@/components/pricing-section"), {
-  ssr: false,
-});
+const Timeline = dynamic(() => import("@/components/timeline"), { ssr: false })
+const FAQSection = dynamic(() => import("@/components/faq-section"), { ssr: false })
+const PricingSection = dynamic(() => import("@/components/pricing-section"), { ssr: false })
 
 export default function Page() {
-  const [showScrollButton, setShowScrollButton] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
-        setShowScrollButton(true);
+        setShowScrollButton(true)
       } else {
-        setShowScrollButton(false);
+        setShowScrollButton(false)
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    });
-  };
+    })
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
@@ -63,34 +53,19 @@ export default function Page() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="text-gray-300 hover:text-emerald-400 transition-colors"
-            >
+            <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
               Bosh sahifa
             </a>
-            <a
-              href="#why-bm-security"
-              className="text-gray-300 hover:text-emerald-400 transition-colors"
-            >
+            <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
               Nega BM SECURITY ?
             </a>
-            <a
-              href="#course"
-              className="text-emerald-500 hover:text-emerald-400 transition-colors"
-            >
+            <a href="#" className="text-emerald-500 hover:text-emerald-400 transition-colors">
               Kurs
             </a>
-            <a
-              href="#about"
-              className="text-gray-300 hover:text-emerald-400 transition-colors"
-            >
+            <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
               Biz haqimizda
             </a>
-            <a
-              href="#blog"
-              className="text-gray-300 hover:text-emerald-400 transition-colors"
-            >
+            <a href="#" className="text-gray-300 hover:text-emerald-400 transition-colors">
               Blog
             </a>
           </nav>
@@ -111,7 +86,7 @@ export default function Page() {
 
       {/* Hero Section */}
       <main className="relative z-10">
-        <div id="home" className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 py-12">
           <div className="relative w-full max-w-xl aspect-square mb-16">
             <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-3xl"></div>
             <Image
@@ -125,12 +100,12 @@ export default function Page() {
           </div>
 
           {/* Stats Section */}
-          <StatsSection id="why-bm-security" className="mb-16" />
+          <StatsSection className="mb-16" />
 
           <CourseHighlights />
 
           {/* Course Program */}
-          <section id="course" className="container mx-auto mb-16 px-4">
+          <section className="container mx-auto mb-16 px-4">
             <div className="flex items-center gap-2 justify-center mb-8">
               <Lock className="w-5 h-5 text-emerald-500" />
               <h2 className="text-2xl font-bold">Kurs dasturi</h2>
@@ -139,26 +114,18 @@ export default function Page() {
           </section>
 
           {/* Course Details */}
-          <div
-            id="about"
-            className="prose prose-lg max-w-4xl mx-auto px-4 text-left space-y-8 prose-invert"
-          >
+          <div className="prose prose-lg max-w-4xl mx-auto px-4 text-left space-y-8 prose-invert">
             <div className="bg-emerald-500/10 p-6 rounded-lg mb-8 border border-emerald-500/20">
-              <h2 className="text-2xl font-bold text-emerald-400 mb-4">
-                Diqqat!
-              </h2>
+              <h2 className="text-2xl font-bold text-emerald-400 mb-4">Diqqat!</h2>
               <p className="text-gray-300">
-                Ushbu kursda siz kiberxavfsizlik uchun zarur bo'lgan barcha
-                bilimlarni o'rganasiz. Sohaning bir qancha yo'nalishlari mavjud,
-                siz ushbu kursda bu sohalarni barchasiga aloqador bilimlar bilan
-                tanishasiz, ya'ni kurs umumiy va komplekt qilib ishlangan.
+                Ushbu kursda siz kiberxavfsizlik uchun zarur bo'lgan barcha bilimlarni o'rganasiz. Sohaning bir qancha
+                yo'nalishlari mavjud, siz ushbu kursda bu sohalarni barchasiga aloqador bilimlar bilan tanishasiz, ya'ni
+                kurs umumiy va komplekt qilib ishlangan.
               </p>
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-emerald-400">
-                Kursda qatnashish uchun talablar:
-              </h3>
+              <h3 className="text-xl font-semibold text-emerald-400">Kursda qatnashish uchun talablar:</h3>
               <ul className="space-y-4">
                 {[
                   "Kompyuter savodxonligi va internet-tarmoq haqida 100% amaliy tushinchalar",
@@ -175,9 +142,7 @@ export default function Page() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-emerald-400">
-                Kurs tafsilotlari:
-              </h3>
+              <h3 className="text-xl font-semibold text-emerald-400">Kurs tafsilotlari:</h3>
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
                   "O'quvchilar soni: 15 kishi maximum",
@@ -185,10 +150,7 @@ export default function Page() {
                   "Haftalik darslar: 4 kun",
                   "Dars davomiyligi: 1-2 soat",
                 ].map((detail, index) => (
-                  <Card
-                    key={index}
-                    className="bg-emerald-500/10 border-emerald-500/20"
-                  >
+                  <Card key={index} className="bg-emerald-500/10 border-emerald-500/20">
                     <CardContent className="p-4">
                       <p className="text-gray-300">{detail}</p>
                     </CardContent>
@@ -199,9 +161,7 @@ export default function Page() {
 
             {/* Keywords Section */}
             <div className="mt-12">
-              <h3 className="text-xl font-semibold text-emerald-400 mb-4">
-                Mavzuga oid kalit so'zlar:
-              </h3>
+              <h3 className="text-xl font-semibold text-emerald-400 mb-4">Mavzuga oid kalit so'zlar:</h3>
               <div className="flex flex-wrap gap-2">
                 {[
                   "Kiberxavfsizlik",
@@ -225,7 +185,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <FAQSection id="blog" className="mb-16" />
+          <FAQSection className="mb-16" />
           <PricingSection className="mb-16" />
         </div>
       </main>
@@ -237,11 +197,7 @@ export default function Page() {
           <ArrowUpCircle className="w-6 h-6" />
         </button>
       )}
-      <style jsx global>{`
-        html {
-          scroll-behavior: smooth;
-        }
-      `}</style>
     </div>
-  );
+  )
 }
+
