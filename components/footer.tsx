@@ -1,4 +1,5 @@
 import { Shield, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+// hello
 import Link from "next/link";
 
 export default function Footer() {
