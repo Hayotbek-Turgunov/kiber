@@ -2,77 +2,148 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --background: 180 2% 8%;
+    --foreground: 140 84% 95%;
+
+    --card: 180 2% 12%;
+    --card-foreground: 140 84% 95%;
+
+    --popover: 180 2% 8%;
+    --popover-foreground: 140 84% 95%;
+
+    --primary: 135 80% 45%;
+    --primary-foreground: 140 84% 95%;
+
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 180 2% 8%;
+
+    --muted: 180 2% 20%;
+    --muted-foreground: 140 84% 75%;
+
+    --accent: 135 80% 25%;
+    --accent-foreground: 140 84% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 140 84% 95%;
+
+    --border: 180 2% 20%;
+    --input: 180 2% 20%;
+    --ring: 135 80% 45%;
+
     --radius: 0.5rem;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
 }
-
-
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.matrix-bg {
+  background-color: hsl(var(--background));
+  background-image: linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.cyber-border {
+  position: relative;
+  border: 1px solid hsl(var(--primary));
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    hsla(var(--primary) / 0.1) 45%,
+    hsla(var(--primary) / 0.2) 50%,
+    hsla(var(--primary) / 0.1) 55%,
+    transparent 100%
+  );
+}
+
+.cyber-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid hsl(var(--primary));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    95% 100%,
+    95% 5%,
+    5% 5%,
+    5% 95%,
+    0 95%
+  );
+}
+
+.glitch-text {
+  position: relative;
+  text-shadow: 0.05em 0 0 hsla(var(--primary) / 0.75),
+    -0.025em -0.05em 0 hsla(var(--secondary) / 0.75),
+    0.025em 0.05em 0 hsla(var(--accent) / 0.75);
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
   }
 }
