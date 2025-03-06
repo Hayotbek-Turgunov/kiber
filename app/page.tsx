@@ -1,16 +1,14 @@
-import Footer from "@/components/footer";
 import TimelineSection from "@/components/timeline";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   Shield,
   Terminal,
-  Lock,
-  Server,
+  Phone,
   AlertTriangle,
   Cpu,
   Plus,
   CheckCircle,
-  Phone,
   Video,
   FileText,
   Book,
@@ -26,51 +24,26 @@ export default function Home() {
       <header className="container mx-auto px-4 py-4 border-b border-primary/20">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="glitch-text">
-              <span className="text-primary text-2xl font-bold">EduCyber</span>
-            </div>
+            <Image
+              src="../assets/Asset 1.svg"
+              width={200}
+              height={20}
+              alt="Picture of the author"
+            />
           </Link>
-
-          <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
-              className="text-foreground hover:text-primary transition"
-            >
-              Bosh sahifa
-            </Link>
-            <Link
-              href="/security"
-              className="text-foreground hover:text-primary transition"
-            >
-              Nega BM SECURITY ?
-            </Link>
-            <Link href="/courses" className="text-primary font-medium">
-              Kurs
-            </Link>
-            <Link
-              href="/about"
-              className="text-foreground hover:text-primary transition"
-            >
-              Biz haqimizda
-            </Link>
-            <Link
-              href="/blog"
-              className="text-foreground hover:text-primary transition"
-            >
-              Blog
-            </Link>
-          </div>
 
           <div className="flex items-center space-x-4">
             <a
               href="tel:(77)777-77-77"
               className="hidden md:flex items-center space-x-2 text-secondary"
             >
-              <Terminal className="w-4 h-4" />
-              <span>(77) 777-77-77</span>
+              <Phone />
+              <span> (+998 93) 767-31-31</span>
             </a>
             <Button className="cyber-border bg-accent/10 text-primary hover:bg-accent/20">
-              Biz bilan aloqa
+              <Link href="https://t.me/hhsecurity_support" target="_blank">
+                Biz bilan aloqa
+              </Link>
             </Button>
           </div>
         </nav>
@@ -79,22 +52,13 @@ export default function Home() {
       <main className="container mx-auto px-4 py-16">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <h1 className="glitch-text text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Kiberxavfsizlik mutaxassisi bolish uchun 5 oylik onlayn kurs!
+            Kiberxavfsizlik sohasida yetuk mutaxassis bo’lish uchun 6 oylik
+            onlayn o’quv kursi!
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-12">
-            Yangilik, Imkoniyat, sevimli kasb, fantastik qobiliyat va qimmat
-            kadr bolish uchun imkoningiz bor!
+            Zamonaviy, yuqori talab va keng imkoniyatli, munosib maosh va
+            kerakli kasb egasi bo’lish uchun ajoyib imkoniyat!
           </p>
-
-          <div className="relative w-96 h-96 mb-16">
-            <div className="cyber-border rounded-full p-8">
-              <Shield className="w-full h-full text-primary animate-pulse" />
-            </div>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/10 border border-primary text-primary px-6 py-2 rounded">
-              BEST-MASTER.UZ
-            </div>
-          </div>
-
           <section className="w-full max-w-3xl mx-auto cyber-border p-8 rounded-lg">
             <div className="flex items-center gap-2 mb-6">
               <AlertTriangle className="text-primary w-6 h-6" />
@@ -103,58 +67,44 @@ export default function Home() {
 
             <div className="space-y-6 text-left">
               <p className="text-muted-foreground">
-                Ushbu kursda siz kiberxavfsizlik uchun zarur bolgan barcha
-                bilimlarni organasiz. Sohaning bir qancha yonalishlari mavjud,
-                siz ushbu kursda bu sohalarni barchasiga aloqador bilimlar bilan
-                tanishasiz, yani kurs umumiy va komplekt qilib ishlangan.
+                Ushbu kursda siz HH Security tomonidan kiberxavfsizlik uchun
+                zarur bo`lgan bilimlarni o`rganishiz mumkin. Sohaning bir qancha
+                yo`nalishlari mavjud , siz ushbu kursda bu sohalarni barchasiga
+                aloqador bilimlar bilan tanishasiz , ya`ni kurs umumiy va
+                komplekt qilib ishlangan. Kursdan keyin universal bilim darajasi
+                va o`zlashtirishingiz natijasiga qarab , siz kiberxavfsizlik
+                xodimi bo`lib ishlashingiz mumkin bo`ladi. Ha siz kursdan keyin
+                bemalol ish faoliyatingizni boshlashingiz mumkin , albatta bu
+                doim o`quvchining o`ziga va ma`lumotlarni to`liq
+                o`zlashtirishiga bog`liq. Izlanganga tol yor degnadek, harakat
+                qilmasangiz shunchaki harajatga kuyib qolasiz!.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 p-4 cyber-border rounded-lg bg-accent/5">
-                  <Lock className="text-primary w-5 h-5 mt-1" />
-                  <div>
-                    <h3 className="font-medium mb-2">
-                      Kursda qatnashish uchun talablar
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Kompyuter savodxonligi va internet-tarmoq haqida 100%
-                      amaliy tushunchalar bolishi talab qilinadi
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 cyber-border rounded-lg bg-accent/5">
-                  <Server className="text-primary w-5 h-5 mt-1" />
-                  <div>
-                    <h3 className="font-medium mb-2">Oquv jarayoni</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Darslar haftasiga 4 kun, 1-2 soatdan boladi
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <p className="text-lg font-medium text-primary">try harder !</p>
+              <p className="text-lg font-medium text-primary text-right">
+                Shu sabab be carefully !
+              </p>
             </div>
           </section>
           <section className="w-full max-w-3xl mx-auto mt-12 space-y-8">
             <div className="cyber-border p-6 rounded-lg bg-accent/5">
               <p className="text-center text-lg text-primary font-medium mb-6">
-                Ozbekistonda sohani rivojlantirish uchun zorlar bilan birga
-                boling, bizni oilamizga qoshiling !
+                Dunyoda bu sohani rivojlantirish uchun eng zo’rlari bilan ya’ni
+                HH Security bilan birga bo`ling , bizni jamoamizga qo`shiling !
               </p>
 
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Kurs yaqindagina yangilandi, malumotlar juda kop, barchasi
-                  navbat va tartib bilan berib boriladi. Ushbu kurs boshlangich
-                  va dastlabki bilimlarni qamrab oladi. Kursning keyingi
-                  bosqichi mavjud, unda sohaning alohida bolimlari yuqori
-                  darajadagi bilimlar bilan orgatiladi.
-                </p>
-                <p>
-                  Bitiruvchilar togridan-togri CYBER-BRO LLC da ish organadilar.
-                  Bu haqida alohida kurs uchun qabulda elon qilinadi.
+                  Kurs yaqindagina mukammal tarzda ishlab chiqildi , ma`lumotlar
+                  juda ko`p , barchasi navbat va tartib bilan berib boriladi.
+                  Ushbu kurs boshlang`ich va dastlabki bilimlarni qamrab oladi.
+                  Kursning keyingi bosqichi mavjud,kursni tamomlagandan so’ng
+                  sizlar White Hat Hacker (Ethical Hacker) bo’lib yetishasizlar
+                  , shundan so’ng hohlovchilar, kuchaytirilgan va hujumkor
+                  jamoaga qo’shilishmoqchi bo’lganlar 3 oylik Red Team intensiv
+                  kursida o’qishingiz mumkin! Unda sohaning alohida bo`limlari
+                  yuqori darajadagi bilimlar bilan o`rgatiladi. Kursni
+                  tamomlagandan so’ng 2 ta Xalqaro va 1 ta HH Security tomonidan
+                  beriladigan sertifikatlarga ega bo’lasiz!
                 </p>
               </div>
             </div>
@@ -168,37 +118,37 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Kursda hamma ham qatnasha olmaydi, yani – kursda qatnashish
+                    Kursda hamma ham qatnasha olmaydi, ya’ni – kursda qatnashish
                     uchun sizda kompyuter savodxonligi va internet-tarmoq haqida
-                    100% amaliy tushunchalar bolishi talab qilinadi, kompyuterda
-                    kamida 2 yil ishlagan va ozi mustaqil biror muammoni yecha
-                    oladigan darajada bolishi zarur.
-                  </p>
-                  <p>
-                    ozingizni shu sohada kora olsangiz va boshlangich
-                    bilimingizga ishonsangiz, doimiy nazoratda oqishni kotara
-                    olsangiz siz bu kursda oqishingiz mumkin, chala va sifatsiz
-                    kadr chiqarish niyatimiz yoq, shu sabab iltimos jiddiy
-                    munosabatda boling.
+                    100% amaliy tushunchalar bo’lishi talab qilinadi ,
+                    kompyuterda kamida 1.5 yil ishlagan va o’zi mustaqil biror
+                    muammoni yecha oladigan darajada bo’lishi zarur. O’zingizni
+                    shu sohada ko’ra olsangiz va boshlang’ich bilimingizga
+                    ishonsangiz , doimiy nazoratda o’qishni ko’tara olsangiz siz
+                    bu kursda o’qishingiz mumkin , chala va sifatsiz kadr
+                    chiqarish sizni ham bekorga vaqtingizni olish niyatimiz yo’q
+                    , shu sabab
+                    <span className="font-black"> please think again!</span>
                   </p>
                 </div>
 
                 <div className="cyber-border p-4 rounded-lg bg-primary/5">
                   <p className="text-primary font-medium">
-                    Kursni toliq oqishingiz shart, yarmida tashlab qoysangiz
-                    ozingiz xam biz xam natijadan quruq qolamiz, qattiq iltimos
-                    qilardimki aniq maqsad bilan toliq organish uchun kursda
-                    qatnashing !
+                    Kursni yarmida tashlab ketish mumkin emas, ya’ni kursni
+                    tashlab ketsangiz bizni ham sizni ham harakatlaringiz zoye
+                    ketadi, shuning uchun yaxshilab o’ylab bir qarorga keling!
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div className="cyber-border p-4 rounded-lg bg-accent/5">
                     <h3 className="font-medium text-primary mb-2">
-                      Oquvchilar soni
+                      O`quvchilar soni
                     </h3>
                     <p className="text-muted-foreground">
-                      15 kishi maximum bolishi mumkin
+                      O’quvchilar qabul soni cheklangan,ya’ni 2 ta guruh qabul
+                      qilinadi, har bir guruh maximum 15 kishidan iborat
+                      bo’lishi mumkin.
                     </p>
                   </div>
 
@@ -207,7 +157,7 @@ export default function Home() {
                       Dars jadvali
                     </h3>
                     <p className="text-muted-foreground">
-                      Haftasiga 4 kun, 1-2 soatdan
+                      Dars haftasiga 3 kun, 2-3 saotdan bo’ladi.
                     </p>
                   </div>
 
@@ -216,7 +166,8 @@ export default function Home() {
                       Texnik talablar
                     </h3>
                     <p className="text-muted-foreground">
-                      8 GB RAM dan kam bolmagan kompyuter va doimiy internet
+                      Sizda doimiy internet va yaxshi (8 GB RAM dan kam
+                      bo’lmagan ) kompyuter bo’lishi kerak.
                     </p>
                   </div>
 
@@ -225,84 +176,105 @@ export default function Home() {
                       Dars vaqti
                     </h3>
                     <p className="text-muted-foreground">
-                      Kechqurun 20:00 dan keyin
+                      Darslar xammasi , doim kechqurun 20:00 (o’quvchilar bilan
+                      kelishib o’zgartirilishi mumkin) dan keyin o’tiladi,
+                      xaftada 3 kun dars, qolgan kunlar vazifalar bajariladi,
+                      amaliyot va savol-javob qilinadi.. Sizlarni barcha
+                      savollaringizga doimiy ravishda 24/7 supportlar tomonidan
+                      javob olasiz!
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section className="w-full max-w-3xl mx-auto mt-12 space-y-8">
-            <div className="cyber-border p-6 rounded-lg bg-accent/5 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
-              <h2 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-                <span className="text-2xl">😎</span> Bonus imkoniyatlar
+
+          <section className="w-full max-w-3xl mx-auto mt-12 max-[1560px]:max-w-5xl max-[1560px]:px-4 max-[768px]:mt-8 max-[480px]:mt-6 max-[300px]:mt-4 space-y-8 max-[768px]:space-y-6 max-[480px]:space-y-4 max-[300px]:space-y-3">
+            <div className="cyber-border p-6 max-[1560px]:p-8 max-[768px]:p-5 max-[480px]:p-4 max-[300px]:p-3 rounded-lg bg-accent/5 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 max-[1560px]:w-40 max-[1560px]:h-40 max-[768px]:w-28 max-[768px]:h-28 max-[480px]:w-24 max-[480px]:h-24 max-[300px]:w-20 max-[300px]:h-20 bg-primary/10 rounded-full blur-3xl"></div>
+              <h2 className="text-xl max-[1560px]:text-2xl max-[768px]:text-xl max-[480px]:text-lg max-[300px]:text-base font-bold text-primary mb-6 max-[1560px]:mb-8 max-[768px]:mb-5 max-[480px]:mb-4 max-[300px]:mb-3 flex items-center gap-2">
+                <span className="text-2xl max-[1560px]:text-3xl max-[768px]:text-2xl max-[480px]:text-xl max-[300px]:text-lg">
+                  😎
+                </span>{" "}
+                Bonus imkoniyatlar
               </h2>
-              <p className="text-primary font-medium mb-6">
-                Bonus sifatida BMSECURITY GROUP kurslari oquvchilarga doimiy
-                foydalanish uchun kurs ichida tekinga beriladi
+              <p className="text-primary font-medium mb-6 max-[1560px]:text-lg max-[1560px]:max-w-4xl max-[1560px]:mb-8 max-[768px]:text-base max-[768px]:mb-5 max-[480px]:mb-4 max-[300px]:mb-3 max-[480px]:text-sm max-[300px]:text-xs">
+                Bonus sifatida `quvchilarga doimiy foydalanish uchun kurs ichida
+                tekinga beriladi 😎
               </p>
 
-              <div className="grid gap-6">
-                <div className="cyber-border p-4 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
-                  <p className="text-muted-foreground">
-                    Xabaringiz bor bizda aloxida ishlangan bir nechta kurslar
-                    bor va bu kurslar oquvchilarga otiladigan mavzuga qarab
-                    organish uchun beriladi. Oquvchilarga kurs davomida xalqaro
+              <div className="grid gap-6 max-[1560px]:grid-cols-1 max-[1560px]:gap-8 max-[768px]:gap-6 max-[480px]:gap-4 max-[300px]:gap-3">
+                <div className="cyber-border p-4 max-[1560px]:p-6 max-[768px]:p-5 max-[480px]:p-4 max-[300px]:p-2 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                  <p className="text-muted-foreground max-[1560px]:text-base max-[768px]:text-base max-[480px]:text-sm max-[300px]:text-xs">
+                    Ma`lumot uchun bizda aloxida ishlangan bir nechta kurslar
+                    bor va bu kurslar o`quvchilarga o`tiladigan mavzuga qarab
+                    o`rganish uchun beriladi.O`quvchilarga kurs davomida xalqaro
                     Kiberxavfsizlikga aloqador sertifikatlar olish uchun optimal
-                    yol xaritasi orgatiladi, bu sertifikatlar ishga kirishda
-                    nafaqat Ozbekistonda balki butun dunyo boyicha katta
-                    imkoniyat beradi.
+                    yo`l xaritasi o`rgatiladi va ishga kirish uchun zarur
+                    bo`lgan barcha texnik va amaliy yordam
+                    ko`rsatiladi(rezyume,cv,report,suhbatga tayyorlov). Bu
+                    yordam sizga ishga kirishda nafaqat O`zbekistonda balki
+                    butun dunyo bo`yicha katta imkoniyat beradi. Kursimiz asosan
+                    ish vaqtida real tasklarda zarur bilimlar bilan to`ldirilgan
+                    , ba`zi sertifikatlar uchun admin tomonidan aloxida support
+                    qilinadi (agar o`quvchi keyinchalik olmoqchi bo`lsa).
                   </p>
                 </div>
 
-                <div className="cyber-border p-4 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
-                  <h3 className="text-primary font-medium mb-3">
+                <div className="cyber-border p-4 max-[1560px]:p-6 max-[768px]:p-5 max-[480px]:p-4 max-[300px]:p-2 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
+                  <h3 className="text-primary font-medium mb-3 max-[1560px]:text-xl max-[1560px]:mb-4 max-[768px]:text-lg max-[768px]:mb-3 max-[480px]:text-base max-[480px]:mb-2 max-[300px]:mb-1 max-[300px]:text-sm">
                     Amaliy talim
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground max-[1560px]:text-base max-[768px]:text-base max-[480px]:text-sm max-[300px]:text-xs">
                     Kurs davomida 100% amaliyotda siz tarmoq resurslari,
-                    dasturiy taminot, veb-resurslar zaifliklarini batafsil
-                    tahlil qilishni, ulardan ximoyalanishni organasiz. Siz
+                    dasturiy ta`minot, veb-resurslar zaifliklarini batafsil
+                    tahlil qilishni, ulardan ximoyalanishni o`rganasiz. Siz
                     hujumning eng keng tarqalgan ssenariylari bilan tanishasiz
-                    va keyinchalik ularni osonlikcha taniyasiz va bartaraf
-                    qilaolasiz. Viruslarni analiz qilish, tekshirish va
-                    ximoyalanish boyicha mukammal bilimga ega bolasiz.
+                    va keyinchalik ularni osonlikcha taniysiz va bartaraf
+                    qilaolasiz . Viruslarni analiz qilish , tekshirish va
+                    ximoyalanish bo`yicha mukammal bilimga ega bo`lasiz.
                   </p>
                 </div>
 
-                <div className="cyber-border p-4 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
-                  <p className="text-muted-foreground">
+                <div className="cyber-border p-4 max-[1560px]:p-6 max-[768px]:p-5 max-[480px]:p-4 max-[300px]:p-2 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                  <p className="text-muted-foreground max-[1560px]:text-base max-[768px]:text-base max-[480px]:text-sm max-[300px]:text-xs">
                     Axborot tizimi yoki dastur xavfsizligini tahlil qilish uchun
-                    zamonaviy vositalardan foydalanishni, zaif tomonlarni
-                    tasnifi va ularni tuzatish usullari, muntazam vazifalarni
-                    avtomatlashtirish uchun dasturlash qobiliyatlari, topilgan
+                    zamonaviy vositalardan foydalanishni , zaif tomonlarni
+                    tasnifi va ularni tuzatish usullari , muntazam vazifalarni
+                    avtomatlashtirish uchun dasturlash qobiliyatlari , topilgan
                     ojizlik va kamchiliklarni jamlagan mukammal report yozishni
-                    va bilimingizni sertifikatlashtirish uchun zarur bolgan
-                    bilimlarga ega bolasiz.
+                    va bilimingizni sertifikatlashtirish uchun zarur bo`lgan
+                    bilimlarga ega bo`lasiz.
                   </p>
                 </div>
 
-                <div className="relative cyber-border p-6 rounded-lg bg-secondary/5 hover:bg-secondary/10 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="min-w-fit p-3 rounded-full bg-primary/10">
-                      <Terminal className="w-6 h-6 text-primary" />
+                <div className="relative cyber-border p-6 max-[1560px]:p-8 max-[768px]:p-5 max-[480px]:p-4 max-[300px]:p-3 rounded-lg bg-secondary/5 hover:bg-secondary/10 transition-colors">
+                  <div className="flex items-start gap-4 max-[1560px]:gap-6 max-[768px]:gap-4 max-[480px]:gap-3 max-[300px]:gap-2">
+                    <div className="min-w-fit p-3 max-[1560px]:p-4 max-[768px]:p-3 max-[480px]:p-2 max-[300px]:p-1.5 rounded-full bg-primary/10">
+                      <Terminal className="w-6 h-6 max-[1560px]:w-8 max-[1560px]:h-8 max-[768px]:w-6 max-[768px]:h-6 max-[480px]:w-5 max-[480px]:h-5 max-[300px]:w-4 max-[300px]:h-4 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-primary mb-2">
+                      <h3 className="text-lg max-[1560px]:text-xl max-[768px]:text-lg max-[480px]:text-base max-[300px]:text-sm font-medium text-primary mb-2 max-[1560px]:mb-4 max-[768px]:mb-3 max-[480px]:mb-2 max-[300px]:mb-1">
                         24/7 Support
                       </h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground max-[1560px]:text-base max-[768px]:text-base max-[480px]:text-sm max-[300px]:text-xs">
                         <span className="text-primary font-medium">
-                          Ushbu kursda qatnashgan oquvchilar uchun doimiy
-                          alohida support admin (@educyber_admin) tomonidan
-                          taqdim qilinadi
+                          Ushbu kursda qatnashgan o`quvchilar uchun doimiy
+                          alohida support admin
+                          <Link
+                            href="https://t.me/hhsecurity_support"
+                            target="_blank"
+                            className="max-[1560px]:ml-1 max-[768px]:mx-1 max-[480px]:block max-[480px]:my-1 max-[300px]:inline-block max-[300px]:mt-0.5"
+                          >
+                            (@hhsecurity_support)
+                          </Link>
+                          tomonidan taqdim qilinadi ,
                         </span>
-                        , sababi kursni yakunlagan oquvchilar ishga tayyor xodim
-                        bolishadi va keyinchalik ishda duch keladigan
-                        muammolarda biz bilan boglanib muammoni yechimini
-                        topishda yordam beriladi, umuman kurs kontenti, rejasi
-                        juda katta va hamma kerakli malumotlarni oz ichiga
+                        sababi kursni yakunlagan o`quvchilar ishga tayyor hodim
+                        bo`lishadi va keyinchalik ishda duch keladigan
+                        muammolarda biz bilan bog`lanib muammoni yechimini
+                        topishda yordam beriladi , umuman kurs kontenti , rejasi
+                        juda katta va hamma kerakli ma`lumotlarni o`z ichiga
                         olgan.
                       </p>
                     </div>
@@ -311,11 +283,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="cyber-border p-6 rounded-lg bg-accent/5">
-              <h2 className="text-xl font-bold text-primary mb-6">
+            <div className="cyber-border p-6 max-[1560px]:p-8 max-[768px]:p-5 max-[480px]:p-4 max-[300px]:p-3 rounded-lg bg-accent/5">
+              <h2 className="text-xl max-[1560px]:text-2xl max-[768px]:text-xl max-[480px]:text-lg max-[300px]:text-base font-bold text-primary mb-6 max-[1560px]:mb-8 max-[768px]:mb-5 max-[480px]:mb-4 max-[300px]:mb-3">
                 Mavzuga oid kalit sozlar bilan pastda tanishing :
               </h2>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 max-[1560px]:gap-3 max-[768px]:gap-2.5 max-[480px]:gap-2 max-[300px]:gap-1.5">
                 {[
                   "Kiberxavfsizlik",
                   "Tarmoq xavfsizligi",
@@ -328,7 +300,7 @@ export default function Home() {
                 ].map((keyword) => (
                   <span
                     key={keyword}
-                    className="px-3 py-1 rounded-full cyber-border bg-primary/5 text-sm text-primary hover:bg-primary/10 transition-colors cursor-default"
+                    className="px-3 max-[1560px]:px-4 max-[1560px]:py-2 max-[768px]:px-3 max-[768px]:py-1.5 max-[480px]:px-2.5 max-[480px]:py-1 max-[1560px]:text-base max-[768px]:text-sm max-[300px]:px-2 py-1 max-[300px]:py-0.5 rounded-full cyber-border bg-primary/5 text-sm max-[480px]:text-xs max-[300px]:text-[10px] text-primary hover:bg-primary/10 transition-colors cursor-default"
                   >
                     {keyword}
                   </span>
@@ -349,6 +321,31 @@ export default function Home() {
             </div>
           </section>
         </div>
+
+        <section className="w-full max-w-3xl mx-auto cyber-border p-8 rounded-lg mt-3">
+          <div className="flex items-center gap-2 mb-6">
+            <AlertTriangle className="text-primary w-6 h-6" />
+            <h2 className="text-2xl font-bold text-primary">Disclaimer</h2>
+          </div>
+
+          <div className="space-y-6 text-left">
+            <p className="text-muted-foreground">
+              Butun kurs davomida biz xech qanday virtual targetlardan
+              foydalanmaymiz , barcha darslar real targetlarda 100% amaliyot
+              ko’rinishida qilinadi , shu sabab kurs natijasi juda yaxshi
+              bo’ladi , chunki rejalashtirilmagan targetlarda xarxildagi
+              ojizliklar bo’lishi mumkin va o’quvchi buni mustaqil topishni ,
+              bartaraf qilishni o’rganadi . Kurs yakunida umumiy onlayn
+              yig’ilish o’tkaziladi va barchaga yangi egallagan kasblari
+              munosabati bilan tabrik so’zlari beriladi :) ! Eslatib o’taman
+              darslar barchasi real targetlarda bo’ladi , shu sabab dars
+              davomida aloxida VPN Server va boshqa resurslarga ehtiyoj bo’ladi
+              . Darslar kontenti O’zbekiston respublikasi qonunchiligiga zid
+              bo’lmagan xolda tuzilgan va barcha praktikalar boshqa davlatlar
+              resurslari orqali amalga oshiriladi.
+            </p>
+          </div>
+        </section>
       </main>
       <section className="w-full max-w-5xl mx-auto mt-16 px-4">
         <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -358,8 +355,8 @@ export default function Home() {
               Tolov qanday amalga oshiriladi ?
             </h2>
             <p className="text-muted-foreground">
-              Karta orqali yoki pul kochirish yoli bilan tolov qilishingiz
-              mumkin. 5 oylik kursning 1 oylik tolovi 2,000,000 som. Tolov
+              Karta orqali yoki pul kochirish yo`li bilan to`lov qilishingiz
+              mumkin. 6 oylik kursning 1 oylik tolovi 1,000,000 so`m. To`lov
               qilish uchun administratorga murojaat qiling.
             </p>
 
@@ -370,7 +367,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">
-                    3,600,000 somlik kurslarni
+                    2,000,000 so`mlik kurslarni
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     Ushbu kurs ichida tekinga qolga kiritasiz.
@@ -399,7 +396,7 @@ export default function Home() {
                 <div>
                   <h3 className="font-medium mb-1">Kursga yozilish uchun</h3>
                   <p className="text-sm text-muted-foreground">
-                    Administrator bilan boglaning va tolov qiling.
+                    Administrator bilan bog`laning va to`lov qiling.
                   </p>
                 </div>
               </div>
@@ -413,25 +410,25 @@ export default function Home() {
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-muted-foreground">
-                  5 oylik Umumiy kursning narxi
+                  6 oylik Umumiy kursning narxi
                 </span>
                 <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
                   Chegirma bor
                 </span>
               </div>
-              <h3 className="text-4xl font-bold text-primary">10 million</h3>
+              <h3 className="text-4xl font-bold text-primary">6 million</h3>
             </div>
 
             <div className="space-y-4 mb-8">
               {[
                 { icon: Video, text: "Full HD sifatdagi videodarslar" },
-                { icon: FileText, text: "Oquv materiallari" },
-                { icon: Book, text: "Ozbek tilidagi PDF kitob" },
-                { icon: PhoneCall, text: "Oqituvchi bilan doimiy aloqa" },
+                { icon: FileText, text: "O'quv materiallari" },
+                { icon: Book, text: "O'zbek tilidagi PDF kitob" },
+                { icon: PhoneCall, text: "O'qituvchi bilan doimiy aloqa" },
                 { icon: MessageSquare, text: "Umumiy guruh chat" },
                 {
                   icon: Shield,
-                  text: "Barcha oquv qurollari bilan taminlanadi",
+                  text: "Barcha o'quv qurollari bilan taminlanadi",
                 },
                 {
                   icon: Award,
@@ -457,8 +454,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
